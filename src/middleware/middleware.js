@@ -3,6 +3,15 @@ const jwt = require('jsonwebtoken');
 const User = require('../schemas/user.schema');
 
 
+/**
+ * Middleware function for user authentication using JSON Web Tokens (JWT).
+ *
+ * @param {Object} req - The HTTP request object.
+ * @param {Object} res - The HTTP response object.
+ * @param {Function} next - The callback function to call after successful authentication.
+ *
+ * @throws {Object} Returns an HTTP response with an error message if authentication fails.
+ */
 const auth = async (req, res, next) => {
     try {
         const token = req?.cookies?.token;
